@@ -10,16 +10,15 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var gac = GoogleApiClient()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+        let address = "27+e+13th+Street,+NY,+NY+10003"
+        GoogleApiClient.getCoordJson(address: address) { (lat,long) in
+            print(lat, long)
+        }
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
 
 }
 

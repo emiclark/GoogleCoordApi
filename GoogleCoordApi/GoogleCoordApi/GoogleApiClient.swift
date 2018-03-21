@@ -10,9 +10,16 @@ import Foundation
 
 class GoogleApiClient {
     
-    class func getCoordJson(address: String, completion: @escaping([String:Any])->()) {
+    static var lat: Double?
+    static var long: Double?
+    
+//    class func getCoordJson(address: String, completion: @escaping([String:Any])->()) {
+    class func getCoordJson(address: String, completion: @escaping(Double,Double)->()) {
+
+        let addressConverted = address.replacingOccurrences(of: " ", with: "+", options: .literal, range: nil)
+
         
-        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=\(address)&key=\(secrets.googleApiKey)"
+        let urlString = "https://maps.googleapis.com/maps/api/geocode/json?address=\(addressConverted)&key=\(secrets.googleApiKey)"
         
         guard let urlConverted = URL(string: urlString) else {print("url failed"); return}
         
@@ -30,7 +37,14 @@ class GoogleApiClient {
             guard let geometryDict = firstElement["geometry"] as? [String: Any] else { print("gemometry failed"); return }
             guard let locationDict = geometryDict["location"] as? [String:Any] else {print("location failed"); return }
             
-            completion(locationDict)
+            guard let latcoord = locationDict["lat"] as? Double,
+                let longcoord = locationDict["lng"] as? Double
+                else {print("location failed"); return }
+            
+            lat = latcoord
+            long = longcoord
+            
+            completion(lat!,long!)
 
         }.resume()
     }
