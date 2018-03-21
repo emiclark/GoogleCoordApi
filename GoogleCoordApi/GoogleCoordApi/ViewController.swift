@@ -12,6 +12,13 @@ class ViewController: UIViewController {
 
     var gac = GoogleApiClient()
     
+    @IBOutlet weak var addressTextField: UITextField!
+
+    @IBOutlet weak var latLabel: UILabel!
+    @IBOutlet weak var longLabel: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         let address = "27+e+13th+Street,+NY,+NY+10003"
@@ -20,5 +27,7 @@ class ViewController: UIViewController {
         }
     }
 
+    @IBAction func convertButtonTapped(_ sender: UIButton) {
+    }
 }
 
