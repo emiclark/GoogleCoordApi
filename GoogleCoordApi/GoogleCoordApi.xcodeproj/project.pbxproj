@@ -12,6 +12,8 @@
 		00B8752C2061FBA200472F87 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B8752A2061FBA200472F87 /* Main.storyboard */; };
 		00B8752E2061FBA200472F87 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 00B8752D2061FBA200472F87 /* Assets.xcassets */; };
 		00B875312061FBA200472F87 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00B8752F2061FBA200472F87 /* LaunchScreen.storyboard */; };
+		00B875392061FBFF00472F87 /* GoogleApiClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B875382061FBFF00472F87 /* GoogleApiClient.swift */; };
+		00B8753B2061FCDF00472F87 /* secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00B8753A2061FCDF00472F87 /* secrets.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +24,8 @@
 		00B8752D2061FBA200472F87 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		00B875302061FBA200472F87 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		00B875322061FBA200472F87 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		00B875382061FBFF00472F87 /* GoogleApiClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoogleApiClient.swift; sourceTree = "<group>"; };
+		00B8753A2061FCDF00472F87 /* secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = secrets.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,8 +59,10 @@
 			isa = PBXGroup;
 			children = (
 				00B875262061FBA200472F87 /* AppDelegate.swift */,
+				00B875382061FBFF00472F87 /* GoogleApiClient.swift */,
 				00B875282061FBA200472F87 /* ViewController.swift */,
 				00B8752A2061FBA200472F87 /* Main.storyboard */,
+				00B8753A2061FCDF00472F87 /* secrets.swift */,
 				00B8752D2061FBA200472F87 /* Assets.xcassets */,
 				00B8752F2061FBA200472F87 /* LaunchScreen.storyboard */,
 				00B875322061FBA200472F87 /* Info.plist */,
@@ -136,6 +142,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00B875392061FBFF00472F87 /* GoogleApiClient.swift in Sources */,
+				00B8753B2061FCDF00472F87 /* secrets.swift in Sources */,
 				00B875292061FBA200472F87 /* ViewController.swift in Sources */,
 				00B875272061FBA200472F87 /* AppDelegate.swift in Sources */,
 			);
