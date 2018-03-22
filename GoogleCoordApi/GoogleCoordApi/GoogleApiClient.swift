@@ -24,7 +24,9 @@ class GoogleApiClient {
         URLSession.shared.dataTask(with: urlConverted) { (data, response, error) in
             
             guard let data = data else {print("data nil"); return }
-                
+
+            
+            do {
             let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
             
             guard let json = jsonDict else { print("json conversion failed"); return }
@@ -42,6 +44,12 @@ class GoogleApiClient {
             self.long = longcoord
             
             completion(self.lat!,self.long!)
+            }
+            
+            catch
+            {
+                print(error)
+            }
 
         }.resume()
     }
