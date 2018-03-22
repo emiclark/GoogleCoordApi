@@ -16,7 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var latLabel: UILabel!
     @IBOutlet weak var longLabel: UILabel!
-    var errorFlag: Bool = false
+//    var errorFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,18 +25,22 @@ class ViewController: UIViewController {
     
     @IBAction func convertButtonTapped(_ sender: UIButton) {
         self.errorLabel.isHidden = true
-        guard let address = self.addressTextField.text else {print("Address field failed-nil"); self.errorFlag = true; return }
+        guard let address = self.addressTextField.text else {print("Address field failed-nil"); return }
         
         GoogleApiClient.getCoordJson(address: address) { (lat,long) in
-            if  self.errorFlag {
-                self.errorLabel.isHidden = false
-            } else {
-
-                DispatchQueue.main.async {
+            if lat != nil && long != nil {
+                OperationQueue.main.addOperation {
                     self.latLabel.text = "\(lat)"
                     self.longLabel.text = "\(long)"
+                    self.errorLabel.isHidden = true
                 }
             }
+            else{
+                OperationQueue.main.addOperation {
+                self.errorLabel.isHidden = false
+                }
+            }
+
         }
     }
 }
