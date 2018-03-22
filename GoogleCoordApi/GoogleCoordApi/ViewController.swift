@@ -16,10 +16,15 @@ class ViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var latLabel: UILabel!
     @IBOutlet weak var longLabel: UILabel!
+    @IBOutlet weak var coordView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         errorLabel.isHidden = true
+        coordView.layer.cornerRadius = 15
+        coordView.layer.masksToBounds = true
+        coordView.layer.borderWidth = 2
+        coordView.layer.borderColor = UIColor.green.cgColor
     }
     
     @IBAction func convertButtonTapped(_ sender: UIButton) {
@@ -38,6 +43,7 @@ class ViewController: UIViewController {
                 
                 DispatchQueue.main.async {
                     self.errorLabel.isHidden = true
+
                     self.latLabel.text = "\(lat)"
                     self.longLabel.text = "\(long)"
                 }
