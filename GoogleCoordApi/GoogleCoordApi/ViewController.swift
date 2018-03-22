@@ -27,7 +27,8 @@ class ViewController: UIViewController {
         guard let address = self.addressTextField.text else {print("Address field failed-nil"); return }
         
         GoogleApiClient.getCoordJson(address: address) { (lat,long) in
-            if lat != nil && long != nil {
+            
+            if (String(lat).doubleValue != nil) && (String(long).doubleValue != nil) {
                 OperationQueue.main.addOperation {
                     self.latLabel.text = "\(lat)"
                     self.longLabel.text = "\(long)"
@@ -42,5 +43,23 @@ class ViewController: UIViewController {
 
         }
     }
+
 }
+
+extension String {
+    
+struct NumFormatter {
+    static let instance = NumberFormatter()
+}
+
+var doubleValue: Double? {
+    return NumFormatter.instance.number(from: self)?.doubleValue
+}
+
+var integerValue: Int? {
+    return NumFormatter.instance.number(from: self)?.intValue
+    }
+}
+
+
 
