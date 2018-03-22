@@ -41,7 +41,7 @@ class GoogleApiClient {
             self.lat = latcoord
             self.long = longcoord
             
-            completion(lat!,long!)
+            completion(self.lat!,self.long!)
 
         }.resume()
     }

@@ -16,7 +16,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var errorLabel: UILabel!
     @IBOutlet weak var latLabel: UILabel!
     @IBOutlet weak var longLabel: UILabel!
-//    var errorFlag: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
