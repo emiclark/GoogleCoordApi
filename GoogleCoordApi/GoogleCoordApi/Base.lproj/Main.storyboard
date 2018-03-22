@@ -20,14 +20,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Coordinates" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IJi-1z-uNR">
-                                <rect key="frame" x="118.5" y="398" width="135.5" height="30"/>
+                                <rect key="frame" x="118.5" y="422" width="135.5" height="30"/>
                                 <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
                                 <color key="textColor" red="0.2622119376" green="0.76695312500000001" blue="0.71337487649999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                                 <size key="shadowOffset" width="1" height="1"/>
                             </label>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="Gz4-Rb-Bnb">
-                                <rect key="frame" x="110.5" y="451.5" width="154.5" height="24"/>
+                                <rect key="frame" x="110.5" y="475.5" width="154.5" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Latitude:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4as-Y8-Zoh">
                                         <rect key="frame" x="0.0" y="0.0" width="77" height="24"/>
@@ -44,7 +44,7 @@
                                 </subviews>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="de6-sc-kZA">
-                                <rect key="frame" x="94" y="498" width="187" height="24"/>
+                                <rect key="frame" x="94" y="522" width="187" height="24"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="Longitude:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FS0-as-NXK">
                                         <rect key="frame" x="0.0" y="0.0" width="93" height="24"/>
@@ -61,7 +61,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address Conversion" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mvI-Us-jie">
-                                <rect key="frame" x="55.5" y="76" width="264" height="31.5"/>
+                                <rect key="frame" x="55" y="138" width="264" height="31.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="mvI-Us-jie" secondAttribute="height" multiplier="343:41" id="JeF-IR-ds2"/>
                                 </constraints>
@@ -70,14 +70,27 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" highlighted="YES" selected="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Enter address" textAlignment="center" clearsOnBeginEditing="YES" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="0U0-Ui-bSW">
-                                <rect key="frame" x="16" y="157" width="343" height="30"/>
+                                <rect key="frame" x="16" y="219" width="343" height="30"/>
                                 <nil key="textColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <textInputTraits key="textInputTraits" enablesReturnKeyAutomatically="YES"/>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid address." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09P-zF-jOS">
+                                <rect key="frame" x="78" y="257" width="218" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="1" green="0.42616385220000003" blue="0.1141986027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="convertAddressIcon" translatesAutoresizingMaskIntoConstraints="NO" id="7h0-gs-GYi">
+                                <rect key="frame" x="148" y="30" width="79" height="86"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="86" id="iy0-vX-Vyu"/>
+                                    <constraint firstAttribute="width" constant="79" id="uCB-MJ-8TN"/>
+                                </constraints>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvz-5y-db8">
-                                <rect key="frame" x="50" y="258.5" width="275" height="40"/>
-                                <color key="backgroundColor" red="0.26221193757353234" green="0.7669531249999999" blue="0.71337487654418996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="50" y="301" width="275" height="40"/>
+                                <color key="backgroundColor" red="0.27362111490000002" green="0.51679302220000001" blue="0.69566406250000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="275" id="t2j-TJ-Ymd"/>
                                     <constraint firstAttribute="height" constant="40" id="vdW-NN-lmk"/>
@@ -96,17 +109,12 @@
                                     <action selector="convertButtonTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="oKJ-Hi-qZ4"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please enter a valid address." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09P-zF-jOS">
-                                <rect key="frame" x="78.5" y="195" width="218" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="1" green="0.42616385220000003" blue="0.1141986027" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.99139397802166274" blue="0.95860822423930592" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="de6-sc-kZA" firstAttribute="top" secondItem="Gz4-Rb-Bnb" secondAttribute="bottom" constant="22.5" id="08H-PK-RSc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0U0-Ui-bSW" secondAttribute="trailing" constant="16" id="4gc-yg-HN0"/>
+                            <constraint firstItem="7h0-gs-GYi" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="G1b-3C-TTL"/>
                             <constraint firstItem="Gz4-Rb-Bnb" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JK0-Rn-zQ2"/>
                             <constraint firstItem="rvz-5y-db8" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Jxo-xu-WXB"/>
                             <constraint firstItem="de6-sc-kZA" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Nk4-jg-iJP"/>
@@ -114,12 +122,13 @@
                             <constraint firstItem="IJi-1z-uNR" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" constant="-1.5" id="dUE-kQ-wmI"/>
                             <constraint firstItem="0U0-Ui-bSW" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="g5j-O3-MrN"/>
                             <constraint firstItem="09P-zF-jOS" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="gYY-sF-rgY"/>
-                            <constraint firstItem="rvz-5y-db8" firstAttribute="top" secondItem="09P-zF-jOS" secondAttribute="bottom" constant="43" id="guw-Px-a2n"/>
+                            <constraint firstItem="rvz-5y-db8" firstAttribute="top" secondItem="09P-zF-jOS" secondAttribute="bottom" constant="23.5" id="guw-Px-a2n"/>
                             <constraint firstItem="09P-zF-jOS" firstAttribute="top" secondItem="0U0-Ui-bSW" secondAttribute="bottom" constant="8" id="l6D-QK-zkY"/>
                             <constraint firstItem="Gz4-Rb-Bnb" firstAttribute="top" secondItem="IJi-1z-uNR" secondAttribute="bottom" constant="23.5" id="lhS-0q-Fie"/>
-                            <constraint firstItem="IJi-1z-uNR" firstAttribute="top" secondItem="rvz-5y-db8" secondAttribute="bottom" constant="99.5" id="ls1-re-5si"/>
-                            <constraint firstItem="mvI-Us-jie" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="56" id="m9T-Og-nap"/>
+                            <constraint firstItem="IJi-1z-uNR" firstAttribute="top" secondItem="rvz-5y-db8" secondAttribute="bottom" constant="81" id="ls1-re-5si"/>
+                            <constraint firstItem="7h0-gs-GYi" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="qDZ-rz-DNg"/>
                             <constraint firstItem="mvI-Us-jie" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="svF-Zt-ume"/>
+                            <constraint firstItem="mvI-Us-jie" firstAttribute="top" secondItem="7h0-gs-GYi" secondAttribute="bottom" constant="22" id="yIY-hU-isO"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -135,4 +144,7 @@
             <point key="canvasLocation" x="140" y="86.806596701649184"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="convertAddressIcon" width="250" height="250"/>
+    </resources>
 </document>

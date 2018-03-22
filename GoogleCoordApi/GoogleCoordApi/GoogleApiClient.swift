@@ -13,6 +13,7 @@ class GoogleApiClient {
     static var lat: Double?
     static var long: Double?
     static var vc = ViewController()
+    static var errorString = ""
     
     class func getCoordJson(address: String, completion: @escaping(Double,Double)->()) {
 
@@ -24,8 +25,16 @@ class GoogleApiClient {
         guard let urlConverted = URL(string: urlString) else {print("url failed");  return}
         
         URLSession.shared.dataTask(with: urlConverted) { (data, response, error) in
+
+            guard let response = response as? HTTPURLResponse else {print("response failed"); return }
             
-            guard let data = data else {print("data nil"); vc.errorFlag = true; return }
+            if response.statusCode == 400 {
+                errorString = "Please enter a valid address"
+                
+            }
+            else {
+            errorString = ""
+            guard let data = data else {print("data nil"); return }
             
             let jsonDict = try? JSONSerialization.jsonObject(with: data, options: []) as! [String: Any]
             guard let json = jsonDict else { print("json conversion failed"); return }
@@ -35,16 +44,18 @@ class GoogleApiClient {
             
             guard let firstElement = resultsArr.first as? [String:Any] else { print("failed"); return }
             guard let geometryDict = firstElement["geometry"] as? [String: Any] else { print("gemometry failed"); return }
-            guard let locationDict = geometryDict["location"] as? [String:Any] else {print("location failed"); vc.errorFlag = true; return }
+                
+            guard let locationDict = geometryDict["location"] as? [String:Any] else {print("location failed");  return }
             
             guard let latcoord = locationDict["lat"] as? Double,
                 let longcoord = locationDict["lng"] as? Double
-                else {print("location failed");vc.errorFlag = true; return }
+                else {print("location failed"); return }
             
             lat = latcoord
             long = longcoord
             
             completion(lat!,long!)
+            }
 
         }.resume()
     }
